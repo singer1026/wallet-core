@@ -154,5 +154,6 @@ Pod::Spec.new do |s|
     }
     ss.dependency 'TrustWalletCore/Types'
   end
-  s.prepare_command = 'tools/install-dependencies && tools/generate-files'
+  s.prepare_command = 'tools/install-dependencies && cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Debug && make -Cbuild
+ && tools/generate-files'
 end
